@@ -8,7 +8,7 @@ let scoreNum = document.getElementById(`scoreNum`);
 let score = 0;
 
 
-let rollsound = new Audio("sound/roll.wav"); 
+let rollsound = new Audio("sound/roll2.wav"); 
 
 
 startBtn.addEventListener(`click`, () =>{
@@ -24,7 +24,7 @@ rollDiceBtn.addEventListener(`click`, () =>{
 
     let diceRoll = Math.ceil(Math.random() * 6);
     rollsound.pause()
-    rollsound.currentTime = 0
+    rollsound.currentTime = 2
     rollsound.play();
    
 
