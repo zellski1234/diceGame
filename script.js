@@ -18,15 +18,15 @@ rollDiceBtn.addEventListener(`click`, () =>{
         console.log(score);
         console.log(`rolled a ${diceRoll}`);
         scoreNum.textContent = `Your Score is ${score}`;
-        // if (score >= 20){
-        //     scoreNum.textContent = `You won with a score of ${score}`;
-        //     // remove the roll button
-        // }
+        if (score >= 20){
+            scoreNum.textContent = `You won with a score of ${score}`;
+            // remove the roll button
+        }
     }
     else if (diceRoll == 1) {
         
         score = 0;
-        scoreNum.textContent = `Your Score is ${score}`;
+        scoreNum.textContent = `You lost score: ${score}`;
         diceNum.textContent = `You rolled a ${diceRoll}`
         console.log(`rolled a ${diceRoll}`);
         console.log("lost");
