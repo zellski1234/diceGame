@@ -4,6 +4,7 @@ const rollDiceBtn = document.getElementById(`rollDiceBtn`);
 const startBtn = document.getElementById(`startBtn`);
 const diceNum = document.getElementById(`diceNum`);
 let scoreNum = document.getElementById(`scoreNum`);
+const heading = document.getElementById(`heading`);
 
 let score = 0;
 
@@ -17,6 +18,8 @@ startBtn.addEventListener(`click`, () =>{
         score = 0
         scoreNum.textContent = `Score: ${score}`;
         diceNum.textContent = `` 
+        heading.style.visibility = `hidden`
+        
 });
 
 
@@ -48,7 +51,7 @@ rollDiceBtn.addEventListener(`click`, () =>{
         console.log(`rolled a ${diceRoll}`);
         console.log("lost");
         rollDiceBtn.style.display = `none`
-        
+        heading.style.visibility = ``        
         // remove the roll button
     }
     
