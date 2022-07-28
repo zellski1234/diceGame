@@ -27,7 +27,7 @@ rollDiceBtn.addEventListener(`click`, () =>{
         
         score = 0;
         scoreNum.textContent = `Your Score is ${score}`;
-        diceNum.textConte = `You rolled a ${diceRoll}`
+        diceNum.textContent = `You rolled a ${diceRoll}`
         console.log(`rolled a ${diceRoll}`);
         console.log("lost");
         
