@@ -23,7 +23,10 @@ startBtn.addEventListener(`click`, () =>{
 rollDiceBtn.addEventListener(`click`, () =>{
 
     let diceRoll = Math.ceil(Math.random() * 6);
+    rollsound.pause()
+    rollsound.currentTime = 0
     rollsound.play();
+   
 
     if(diceRoll > 1 && score < 20){
         diceNum.textContent = `You rolled a ${diceRoll}`
