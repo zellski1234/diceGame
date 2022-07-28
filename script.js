@@ -24,7 +24,7 @@ rollDiceBtn.addEventListener(`click`, () =>{
 
     let diceRoll = Math.ceil(Math.random() * 6);
     rollsound.pause()
-    rollsound.currentTime = 2
+    rollsound.currentTime = 0
     rollsound.play();
    
 
