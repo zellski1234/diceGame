@@ -13,6 +13,7 @@ const P1Score = document.getElementById(`score1`);
 const P2Score = document.getElementById(`score2`);
 const rollSpin = document.getElementById(`rollSpin`);
 let rollsound = new Audio("sound/roll2.wav"); 
+let alertSound = new Audio("sound/alert.wav");
 let score = 0
 let score2 = 0;
 let score1 = 0;
@@ -87,7 +88,7 @@ rollDiceBtn.addEventListener(`click`, () =>{
         else if (P2Turn == true && P1Turn == false){
             diceNum.textContent = `You rolled a ${diceRoll}`
             score = score + diceRoll;
-            score2 = score1 + diceRoll;
+            score2 = score2 + diceRoll;
             console.log(score);
             console.log(`rolled a ${diceRoll}`);
             scoreNum.textContent = `Score: ${score}`;
@@ -99,6 +100,10 @@ rollDiceBtn.addEventListener(`click`, () =>{
 
     switch (diceRoll) {
         case 1:
+            // plays alert if one is rolled
+            alertSound.pause();
+            alertSound.currentTime = 0;
+            alertSound.play();
             score = 0;
             scoreNum.textContent = `Score: ${score}`;
             diceNum.textContent = `You rolled a ${diceRoll}`;
@@ -216,6 +221,14 @@ holdDiceBtn.addEventListener(`click`, ()=>{
         player1Title.style.webkitTextStroke = ``;
         score = 0
         scoreNum.textContent = `Score: ${score}`;
+        diceNum.style.visibility = `hidden`;
+        dices[0].style.display = `block`;
+        dices[0].style.visibility = `hidden`;         
+        dices[1].style.display = `none`;
+        dices[2].style.display = `none`;
+        dices[3].style.display = `none`;
+        dices[4].style.display = `none`;
+        dices[5].style.display = `none`; 
        }
     else if(P2Turn == true && P1Turn == false){
         P2Score.textContent = `${score2}`
@@ -226,6 +239,14 @@ holdDiceBtn.addEventListener(`click`, ()=>{
         player2Title.style.webkitTextStroke = ``;
         score = 0
         scoreNum.textContent = `Score: ${score}`;
+        diceNum.style.visibility = `hidden`;
+        dices[0].style.display = `block`;
+        dices[0].style.visibility = `hidden`;         
+        dices[1].style.display = `none`;
+        dices[2].style.display = `none`;
+        dices[3].style.display = `none`;
+        dices[4].style.display = `none`;
+        dices[5].style.display = `none`; 
     }
 
 
