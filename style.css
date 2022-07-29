@@ -1,6 +1,6 @@
 
  *{
-    /* outline: 1px solid black; */
+    outline: 1px solid white;
     margin: 0px;
 } 
 
@@ -241,9 +241,96 @@ body{
               }
 
             @media all and (max-width:1000px){
-                #contain{
-                    margin: 200px 0px 0px 0px;
+                body{
+                    background-color: #323031;
                 }
+                #contain{
+                    margin: 80px 0px 0px 0px;
+                    width: auto;
+                    padding: 0px;
+                   
+                }
+                #bottom{
+                    width: auto;
+                    margin: 100px 0px 200px 0px;
+                    padding: 0px;
+                }
+                    #scoreNum{
+                        margin: 0px;
+                        padding: 0px 0px 100px 0px;
+                        font-size: 58px;
+                    }
+                    #rollDiceBtn{
+                        padding: 20px 48px 20px 36px;
+                        margin: 50px 80px 100px 80px;
+                        font-size: 48px;
+                    }
+                    #holdDiceBtn{
+                        padding: 20px 48px 20px 36px;
+                        margin: 0px 80px 80px 80px;
+                        font-size: 48px;
+                    }
+                    .icons{
+                        width: 60px;
+                        margin: 0px 10px 0px 0px;
+                    }
+                    #diceNum{
+                        font-size: 48px;
+                        text-align: center;
+                    }
+                #middle{
+                    width: 100%;
+                    margin: 0px 0px 0px 0px;
+                    padding: 0px 0px 0px 0px;
+                    display: flex;
+                    justify-content: center;
+                }
+                    #middleLeft{
+                        width: fit-content;
+                    }
+                        #player1Title{
+                            font-size: 50px;
+                        }
+                        #score1{
+                            font-size: 50px;                        
+                        }
+                    #middleRight{
+                        width: fit-content;
+                    }
+                        #player2Title{
+                            font-size: 50px;
+                        }
+                        #score2{
+                            font-size: 50px;                        
+                        }
+                    #middleCenter{
+                        width: fit-content;
+                    }
+                        .dices{
+                            width: 300px;
+                        }
+                    
+
+                    
+                #top{
+                    width: auto;
+                    margin: 100px 80px 0px 80px;
+                    padding: 0px
+                }
+                #heading{
+                    font-size: 40px;
+                }
+                #togglePlayers{
+                    padding: 20px 36px 20px 36px;
+                    margin: 0px 80px 100px 80px;
+                    font-size: 30px;
+                }
+                #startBtn{
+                    padding: 20px 36px 20px 36px;
+                    margin: 50px 80px 100px 80px;
+                    font-size: 48px;
+                }
+                
             }
 
             
