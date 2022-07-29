@@ -81,10 +81,11 @@ body{
             flex-wrap: wrap;
         }
             #middleLeft{
-                width: 200px; 
+                width: 150px; 
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                margin: 0px 25px;
             }
                 #player1Title{
                     visibility: hidden;
@@ -100,10 +101,11 @@ body{
                 width: 300px;   
             }
             #middleRight{
-                width: 200px;
+                width: 150px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                margin: 0px 25px;
             }
                 #player2Title{
                     visibility: hidden;
@@ -238,6 +240,11 @@ body{
                 }
               }
 
+            @media all and (max-width:1000px){
+                #contain{
+                    margin: 200px 0px 0px 0px;
+                }
+            }
 
             
 
