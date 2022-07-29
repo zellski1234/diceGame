@@ -115,6 +115,9 @@ body{
                     font-size: 26px;
                     font-weight: 700;
                 }
+                .playerScores{
+                    margin: 40px;
+                }
                 
             /* ----------- Dice ----------- */
             #imageDivs{
