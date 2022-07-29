@@ -213,6 +213,15 @@ rollDiceBtn.addEventListener(`click`, () =>{
 
 
 holdDiceBtn.addEventListener(`click`, ()=>{
+    diceNum.style.visibility = `hidden`;
+    dices[0].style.display = `block`;
+    dices[0].style.visibility = `hidden`;         
+    dices[1].style.display = `none`;
+    dices[2].style.display = `none`;
+    dices[3].style.display = `none`;
+    dices[4].style.display = `none`;
+    dices[5].style.display = `none`; 
+    
     if(P1Turn == true && P2Turn == false){
         score1 = score + score1
         P1Score.textContent = `${score1}`
@@ -223,14 +232,6 @@ holdDiceBtn.addEventListener(`click`, ()=>{
         player1Title.style.webkitTextStroke = ``;
         score = 0
         scoreNum.textContent = `Score: ${score}`;
-        diceNum.style.visibility = `hidden`;
-        dices[0].style.display = `block`;
-        dices[0].style.visibility = `hidden`;         
-        dices[1].style.display = `none`;
-        dices[2].style.display = `none`;
-        dices[3].style.display = `none`;
-        dices[4].style.display = `none`;
-        dices[5].style.display = `none`; 
        }
     else if(P2Turn == true && P1Turn == false){
         score2 = score + score2
@@ -242,14 +243,7 @@ holdDiceBtn.addEventListener(`click`, ()=>{
         player2Title.style.webkitTextStroke = ``;
         score = 0
         scoreNum.textContent = `Score: ${score}`;
-        diceNum.style.visibility = `hidden`;
-        dices[0].style.display = `block`;
-        dices[0].style.visibility = `hidden`;         
-        dices[1].style.display = `none`;
-        dices[2].style.display = `none`;
-        dices[3].style.display = `none`;
-        dices[4].style.display = `none`;
-        dices[5].style.display = `none`; 
+    
     }
 
 
