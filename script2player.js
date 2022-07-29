@@ -221,7 +221,7 @@ holdDiceBtn.addEventListener(`click`, ()=>{
     dices[3].style.display = `none`;
     dices[4].style.display = `none`;
     dices[5].style.display = `none`; 
-    
+
     if(P1Turn == true && P2Turn == false){
         score1 = score + score1
         P1Score.textContent = `${score1}`
@@ -236,8 +236,8 @@ holdDiceBtn.addEventListener(`click`, ()=>{
     else if(P2Turn == true && P1Turn == false){
         score2 = score + score2
         P2Score.textContent = `${score2}`
-        P1Turn = false
-        P2Turn = true
+        P1Turn = true
+        P2Turn = false
         holdDiceBtn.style.visibility = `hidden`
         player1Title.style.webkitTextStroke = `2px #ffc857`;
         player2Title.style.webkitTextStroke = ``;
