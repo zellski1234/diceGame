@@ -1,7 +1,8 @@
 
- /* *{
-    outline: 1px solid black;
-}  */
+ *{
+    /* outline: 1px solid black; */
+    margin: 0px;
+} 
 
 body{
     margin: 0px;
@@ -18,7 +19,7 @@ body{
         background-color: #323031;
         border-radius: 40px;
         width: 700px;
-        margin: 15px 0px 0px 0px;
+        margin: 10px 0px 0px 0px;
     }
         /* ----------- Top -----------  */
         #top{
@@ -141,9 +142,10 @@ body{
             width: 700px;
             margin: 0px 50px 0px 50px;
             border-radius: 40px;
+            max-height: 250px;
         }
             #diceNum{
-                visibility: hidden;
+                visibility: hidden; 
             }
             #rollDiceBtn{
                 display: flex;
@@ -160,7 +162,7 @@ body{
                 transition: transform 0.5s;
                 transition-timing-function: ease-out;
                 visibility: hidden;
-                margin: 20px;
+                margin: 10px;
             }
             #rollDiceBtn:hover{
                 background-color: #FFD681;
@@ -182,12 +184,15 @@ body{
                 transition: transform 0.5s;
                 transition-timing-function: ease-out;
                 visibility: hidden;
-                margin: 0px 0px 0px 0px;
+                margin: 0px 0px 10px 0px;
             }
             #holdDiceBtn:hover{
                 background-color: #FFD681;
                 border: 2px solid #FFD681;
                 cursor: pointer;
+            }
+            #scoreNum{
+                margin-bottom: 30px;
             }
 
             .icons{
