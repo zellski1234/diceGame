@@ -78,9 +78,9 @@ body{
                     #diceImg1{display: block; visibility: hidden}
                     #diceImg2{display: none;}
                     #diceImg3{display: none;}
-                    #diceImg4{display: none;}
+                    #diceImg4{display: none; transform: translateY(-1px);}
                     #diceImg5{display: none;}
-                    #diceImg6{display: none;}
+                    #diceImg6{display: none; transform: translateY(-1px);}
 
         #bottom{
             display: flex;

@@ -36,9 +36,10 @@ rollDiceBtn.addEventListener(`click`, (event) =>{
     rollsound.currentTime = 0;
     rollsound.play();
 
-    event.target.classList.toggle('done');
+    event.target.classList.remove('done');
+    void event.target.offsetWidth;
+    event.target.classList.add("done");
 
-    document.getElementsByClassName(`done`);
    
     let highRoll = function(){
         diceNum.textContent = `You rolled a ${diceRoll}`
