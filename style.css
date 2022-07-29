@@ -1,7 +1,7 @@
 
-/* *{
+ /* *{
     outline: 1px solid black;
-} */
+}  */
 
 body{
     margin: 0px;
@@ -18,7 +18,7 @@ body{
         background-color: #323031;
         border-radius: 40px;
         width: 700px;
-        margin: 100px 0px 0px 0px;
+        margin: 50px 0px 0px 0px;
     }
         /* ----------- Top -----------  */
         #top{
@@ -59,11 +59,40 @@ body{
         #middle{
             width: 700px;
             margin: 0px 50px 0px 50px;
-            background-color: #323031; 
+            background-color: #323031;
+            display: flex;
+            flex-wrap: wrap;
         }
-        #rollDiceBtn{
-                visibility: hidden;
+            #middleLeft{
+                width: 200px; 
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
+                #player1Title{
+                    visibility: hidden;
+                }
+                #score1{
+                    visibility: hidden;
+                }
+            #middleCenter{
+                width: 300px;   
+            }
+            #middleRight{
+                width: 200px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+                #player2Title{
+                    visibility: hidden;                    
+                }
+                #score2{
+                    visibility: hidden;
+                }
+                #rollDiceBtn{
+                        visibility: hidden;
+                    }
             /* ----------- Dice ----------- */
             #imageDivs{
                 display: flex;
@@ -95,6 +124,8 @@ body{
                 visibility: hidden;
             }
             #rollDiceBtn{
+                display: flex;
+                align-items: center;
                 padding: 10px 20px 10px 20px;
                 color: black;
                 text-align: center;
@@ -111,6 +142,32 @@ body{
                 background-color: #FFD681;
                 border: 2px solid #FFD681;
                 cursor: pointer;
+            }
+            #holdDiceBtn{
+                display: flex;
+                align-items: center;
+                padding: 10px 25px 10px 20px;
+                color: black;
+                text-align: center;
+                font-weight: 700;
+                border: none;
+                background-color: #FFC857;
+                border: 2px solid #FFC857;
+                border-radius: 40px;
+                font-size: 18px;
+                transition: transform 0.5s;
+                transition-timing-function: ease-out;
+                visibility: hidden;
+            }
+            #holdDiceBtn:hover{
+                background-color: #FFD681;
+                border: 2px solid #FFD681;
+                cursor: pointer;
+            }
+
+            .icons{
+                width: 25px;
+                margin: 0px 3px 0px 0px;
             }
             
 
@@ -134,6 +191,27 @@ body{
                   transform: translateX(0px);
                 }
               }
+
+            .spinner{
+                animation: 0.8s shake forwards;
+            }
+
+              @keyframes spin{
+                0%{
+                    transform: rotate(0);
+                }
+                25%{
+                    transform: rotate(90deg);
+                }
+                  
+                50%{
+                    transform: rotate(180deg);
+                }
+                100%{
+                  transform: rotate(0);
+                }
+              }
+
 
             
 

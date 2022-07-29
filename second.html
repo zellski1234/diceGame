@@ -9,9 +9,52 @@
 </head>
 <body>
     <div>
-        <div>
+        <div id="contain">
+            <!-- Top Row -->
+        <div id="top">
+            <h1 id="heading"> First player to Hit a score of 20 wins! If you roll a 1 your score resets!</h1>
+            <button id="startBtn"> Start </button>
+        </div>
+                
+        <!-- Middle Row -->
+        <div id="middle">  
+            <!-- left -->
+            <div id="middleLeft">
+                <h2 id="player1Title"> Player 1 </h2>
+                <p id="score1">score</p>                             
+            </div>
+            <!-- center -->
+            <div id="middleCenter">
+                <!-- ---------- Dice Images ---------- -->
+                <div id="imageDivs">
+                    <img class="dices" id="diceImg1" src="images/dOne.png" alt="diceimage1">
+                    <img class="dices" id="diceImg2" src="images/dTwo.png" alt="diceimage2">
+                    <img class="dices" id="diceImg3" src="images/dThree.png" alt="diceimage3">
+                    <img class="dices" id="diceImg4" src="images/dFour.png" alt="diceimage4">
+                    <img class="dices" id="diceImg5" src="images/dFive.png" alt="diceimage5">
+                    <img class="dices" id="diceImg6" src="images/dSix.png" alt="diceimage6">
+                </div>
+            </div>
+            <!-- right -->
+            <div id="middleRight">
+                <h2 id="player2Title"> Player 2 </h2>
+                <p id="score2">score</p>
+            </div>
+        </div>
+        <!-- Bottom Row -->
+        <div id="bottom">
+            <p id="diceNum">10</p>
+            <button id="rollDiceBtn"><img src="images/spinning.png" class="icons">Roll</button>
+            <button id="holdDiceBtn"><img src="images/hold.png" class="icons">Hold</button>
+            
+
+            <h1 id="scoreNum">Score:</h1>
+        </div>
+
 
         </div>
+        
     </div>
+    <script src="script2player.js"></script>
 </body>
 </html>

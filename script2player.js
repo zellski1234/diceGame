@@ -1,18 +1,23 @@
 
-
+// two players version
 const rollDiceBtn = document.getElementById(`rollDiceBtn`);
 const startBtn = document.getElementById(`startBtn`);
 const diceNum = document.getElementById(`diceNum`);
 let scoreNum = document.getElementById(`scoreNum`);
 const heading = document.getElementById(`heading`);
 const dices = document.getElementsByClassName(`dices`);
+const player1Title = document.getElementById(`player1Title`);
+const player2Title = document.getElementById(`player1Title`);
+const P1Score = document.getElementById(`score1`);
+const P2Score = document.getElementById(`score2`);
 let rollsound = new Audio("sound/roll2.wav"); 
-let score = 0;
+let score = 0
+let score2 = 0;
+let score1 = 0;
 
 
 // ---------- starts and restarts game ----------
 startBtn.addEventListener(`click`, () =>{
-    // changes text to restart
     startBtn.textContent = `Restart`
     diceNum.style.visibility = `hidden`;
     rollDiceBtn.style.visibility = `visible`;
@@ -37,9 +42,13 @@ rollDiceBtn.addEventListener(`click`, (event) =>{
     rollsound.currentTime = 0;
     rollsound.play();
 
-    event.target.classList.remove('done');
+    // event.target.classList.remove('done');
+    // void event.target.offsetWidth;
+    // event.target.classList.add("done");
+
+    event.target.classList.remove('spinner');
     void event.target.offsetWidth;
-    event.target.classList.add("done");
+    event.target.classList.add("spinner");
 
    
     let highRoll = function(){
@@ -123,3 +132,5 @@ rollDiceBtn.addEventListener(`click`, (event) =>{
     }
 }
 );
+
+
