@@ -1,19 +1,24 @@
 
 // two players version
 const rollDiceBtn = document.getElementById(`rollDiceBtn`);
+const holdDiceBtn = document.getElementById(`holdDiceBtn`);
 const startBtn = document.getElementById(`startBtn`);
 const diceNum = document.getElementById(`diceNum`);
 let scoreNum = document.getElementById(`scoreNum`);
 const heading = document.getElementById(`heading`);
 const dices = document.getElementsByClassName(`dices`);
 const player1Title = document.getElementById(`player1Title`);
-const player2Title = document.getElementById(`player1Title`);
-const P1Score = document.getElementById(`score1`);
+const player2Title = document.getElementById(`player2Title`);
+let P1Score = document.getElementById(`score1`);
 const P2Score = document.getElementById(`score2`);
+const rollSpin = document.getElementById(`rollSpin`);
 let rollsound = new Audio("sound/roll2.wav"); 
 let score = 0
 let score2 = 0;
 let score1 = 0;
+
+let P1Turn = false
+let P2Turn = false
 
 
 // ---------- starts and restarts game ----------
@@ -23,59 +28,88 @@ startBtn.addEventListener(`click`, () =>{
     rollDiceBtn.style.visibility = `visible`;
     score = 0;
     scoreNum.textContent = `Score: ${score}`; 
-    heading.style.visibility = `hidden`;
     dices[0].style.display = `block`;
     dices[0].style.visibility = `hidden`;         
     dices[1].style.display = `none`;
     dices[2].style.display = `none`;
     dices[3].style.display = `none`;
     dices[4].style.display = `none`;
-    dices[5].style.display = `none`;       
+    dices[5].style.display = `none`; 
+    
+
+    // player 1 turn first
+    score1 = 0;
+    player1Title.style.visibility = `visible`;
+    player1Title.style.webkitTextStroke = `2px #ffc857`;
+    P1Score.style.visibility =`visible`;
+    P1Turn = true
+    P1Score.textContent = `0`
+    
+    P2Turn = false 
+    score2 = 0;
+    player2Title.style.visibility = `visible`;
+    player2Title.style.webkitTextStroke = ``;
+    P2Score.style.visibility =`visible`;
+    P2Score.textContent = `0`
+    heading.style.visibility = `visible`
+    
 });
 
 
 // ---------- roll button ----------
-rollDiceBtn.addEventListener(`click`, (event) =>{
+rollDiceBtn.addEventListener(`click`, () =>{
     let diceRoll = Math.ceil(Math.random() * 6);
     diceNum.style.visibility = `visible`;
     rollsound.pause();
     rollsound.currentTime = 0;
     rollsound.play();
 
-    // event.target.classList.remove('done');
-    // void event.target.offsetWidth;
-    // event.target.classList.add("done");
+    holdDiceBtn.style.visibility = `visible`; 
 
-    event.target.classList.remove('spinner');
-    void event.target.offsetWidth;
-    event.target.classList.add("spinner");
+    rollDiceBtn.classList.remove('done');
+    void rollDiceBtn.offsetWidth;
+    rollDiceBtn.classList.add("done");
 
+    rollSpin.classList.remove(`spinner`);
+    void rollSpin.offsetWidth;
+    rollSpin.classList.add(`spinner`);
    
     let highRoll = function(){
         diceNum.textContent = `You rolled a ${diceRoll}`
         score = score + diceRoll;
         console.log(score);
         console.log(`rolled a ${diceRoll}`);
-        scoreNum.textContent = `Score: ${score}`;       
+        scoreNum.textContent = `Score: ${score}`;           
     };
     console.log(diceRoll);
 
     switch (diceRoll) {
         case 1:
             score = 0;
-            scoreNum.textContent = `You lost Score: ${score}`;
+            scoreNum.textContent = `Score: ${score}`;
             diceNum.textContent = `You rolled a ${diceRoll}`;
             console.log(`rolled a ${diceRoll}`);
-            console.log("lost");
-            rollDiceBtn.style.visibility = `hidden`;
-            heading.style.visibility = `visible`;
+            if(P1Turn == true && P2Turn == false){
+                P1Turn = false
+                P2Turn = true
+                player1Title.style.webkitTextStroke = ``;
+                player2Title.style.webkitTextStroke = `2px #ffc857`;
+            }
+            else if(P2Turn == true && P1Turn == false){
+                P2Turn = false
+                P1Turn = true
+                player2Title.style.webkitTextStroke = ``;
+                player1Title.style.webkitTextStroke = `2px #ffc857`;
+            }
+            // rollDiceBtn.style.visibility = `hidden`;
+            // heading.style.visibility = `visible`;
             dices[0].style.display = `block`
             dices[0].style.visibility = `visible`            
             dices[1].style.display = `none`;
             dices[2].style.display = `none`;
             dices[3].style.display = `none`;
             dices[4].style.display = `none`;
-            dices[5].style.display = `none`;                      
+            dices[5].style.display = `none`;                
             break;
         case 2:
             dices[0].style.display = `none`;
@@ -124,13 +158,44 @@ rollDiceBtn.addEventListener(`click`, (event) =>{
             break;
         
     }
-     // if dice score is 20 or more
-     if (score >= 20){
-        scoreNum.textContent = `You won with a score of ${score}`;
+     // if players dice score is 20 or more
+     if (score1 >= 20 && score2 < 20){
+        scoreNum.textContent = `Player 1 wins with ${score1}`;
         rollDiceBtn.style.visibility = `hidden`;
         startBtn.textContent = `New Game`;
+        holdDiceBtn.style.visibility = `hidden`; 
+    }
+    else if (score2 >= 20 && score1 < 20){
+        scoreNum.textContent = `Player 2 wins with ${score2}`;
+        rollDiceBtn.style.visibility = `hidden`;
+        startBtn.textContent = `New Game`;
+        holdDiceBtn.style.visibility = `hidden`; 
     }
 }
 );
 
 
+holdDiceBtn.addEventListener(`click`, ()=>{
+    if(P1Turn == true && P2Turn == false){
+        score1 = score1 + score
+        P1Score.textContent = `${score1}`
+        P1Turn = false
+        P2Turn = true
+        holdDiceBtn.style.visibility = `hidden`
+        player2Title.style.webkitTextStroke = `2px #ffc857`;
+        player1Title.style.webkitTextStroke = ``;
+        score = 0
+       }
+    else if(P2Turn == true && P1Turn == false){
+        score2 = score2 + score
+        P2Score.textContent = `${score2}`
+        P1Turn = false
+        P2Turn = true
+        holdDiceBtn.style.visibility = `hidden`
+        player1Title.style.webkitTextStroke = `2px #ffc857`;
+        player2Title.style.webkitTextStroke = ``;
+        score = 0
+    }
+
+
+});

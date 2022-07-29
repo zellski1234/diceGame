@@ -18,7 +18,7 @@ body{
         background-color: #323031;
         border-radius: 40px;
         width: 700px;
-        margin: 50px 0px 0px 0px;
+        margin: 15px 0px 0px 0px;
     }
         /* ----------- Top -----------  */
         #top{
@@ -30,6 +30,22 @@ body{
             margin: 0px 50px 0px 50px;
             border-radius: 40px;
         }
+            #togglePlayers{
+                margin-top: 10px;
+                padding: 10px 18px 10px 18px;
+                color: black;
+                font-weight: 700;
+                background-color: #FFC857;
+                border: 2px solid #FFC857;
+                border-radius: 40px;
+                transform: translateX(250px);
+            }
+            #togglePlayers:hover{
+                cursor: pointer;   
+                background-color: #FFD681;
+                border: 2px solid #FFD681;
+                cursor: pointer;             
+            }
             #heading{
                 text-align: center;
                 font-size: 28px;
@@ -71,9 +87,13 @@ body{
             }
                 #player1Title{
                     visibility: hidden;
+                    font-size: 30px;
+                    font-weight: 800; 
                 }
                 #score1{
                     visibility: hidden;
+                    font-size: 26px;
+                    font-weight: 700;
                 }
             #middleCenter{
                 width: 300px;   
@@ -85,14 +105,16 @@ body{
                 align-items: center;
             }
                 #player2Title{
-                    visibility: hidden;                    
+                    visibility: hidden;
+                    font-size: 30px; 
+                    font-weight: 800;                 
                 }
                 #score2{
                     visibility: hidden;
+                    font-size: 26px;
+                    font-weight: 700;
                 }
-                #rollDiceBtn{
-                        visibility: hidden;
-                    }
+                
             /* ----------- Dice ----------- */
             #imageDivs{
                 display: flex;
@@ -137,6 +159,8 @@ body{
                 font-size: 18px;
                 transition: transform 0.5s;
                 transition-timing-function: ease-out;
+                visibility: hidden;
+                margin: 20px;
             }
             #rollDiceBtn:hover{
                 background-color: #FFD681;
@@ -158,6 +182,7 @@ body{
                 transition: transform 0.5s;
                 transition-timing-function: ease-out;
                 visibility: hidden;
+                margin: 0px 0px 0px 0px;
             }
             #holdDiceBtn:hover{
                 background-color: #FFD681;
@@ -193,22 +218,15 @@ body{
               }
 
             .spinner{
-                animation: 0.8s shake forwards;
+                animation: 0.8s spin forwards;
             }
 
               @keyframes spin{
                 0%{
                     transform: rotate(0);
                 }
-                25%{
-                    transform: rotate(90deg);
-                }
-                  
-                50%{
-                    transform: rotate(180deg);
-                }
                 100%{
-                  transform: rotate(0);
+                  transform: rotate(360deg);
                 }
               }
 
