@@ -14,6 +14,7 @@ const P2Score = document.getElementById(`score2`);
 const rollSpin = document.getElementById(`rollSpin`);
 let rollsound = new Audio("sound/roll2.wav"); 
 let alertSound = new Audio("sound/alert.wav");
+let victory = new Audio("sound/Victory.mp3");
 let score = 0
 let score2 = 0;
 let score1 = 0;
@@ -109,7 +110,7 @@ rollDiceBtn.addEventListener(`click`, () =>{
             alertSound.play();
             score = 0;
             scoreNum.textContent = `P2 Score: ${score}`;
-            
+            holdDiceBtn.style.visibility = `hidden`;             
             console.log(`rolled a ${diceRoll}`);
             if(P1Turn == true && P2Turn == false){
                 P1Turn = false
@@ -180,7 +181,6 @@ rollDiceBtn.addEventListener(`click`, () =>{
             dices[5].style.display = `block`;
             highRoll();
             break;
-        
     }
      // if players dice score is 20 or more
      if (score1 >= 20 && score2 < 20){
@@ -188,12 +188,18 @@ rollDiceBtn.addEventListener(`click`, () =>{
         rollDiceBtn.style.visibility = `hidden`;
         startBtn.textContent = `New Game`;
         holdDiceBtn.style.visibility = `hidden`; 
+        victory.pause();
+        victory.currentTime = 0;
+        victory.play();
     }
     else if (score2 >= 20 && score1 < 20){
         scoreNum.textContent = `Player 2 wins with Score: ${score2}`;
         rollDiceBtn.style.visibility = `hidden`;
         startBtn.textContent = `New Game`;
-        holdDiceBtn.style.visibility = `hidden`; 
+        holdDiceBtn.style.visibility = `hidden`;
+        victory.pause();
+        victory.currentTime = 0;
+        victory.play();
     }
     else if (score >= 20 && P1Turn == true && P2Turn == false && score1 < 20){
         score1 = score1 + score
@@ -202,7 +208,9 @@ rollDiceBtn.addEventListener(`click`, () =>{
         rollDiceBtn.style.visibility = `hidden`;
         startBtn.textContent = `New Game`;
         holdDiceBtn.style.visibility = `hidden`; 
-
+        victory.pause();
+        victory.currentTime = 0;
+        victory.play();
     }
     else if (score >= 20 && P2Turn == true && P1Turn == false && score2 < 20){
         score2 = score2 + score
@@ -211,6 +219,9 @@ rollDiceBtn.addEventListener(`click`, () =>{
         rollDiceBtn.style.visibility = `hidden`;
         startBtn.textContent = `New Game`;
         holdDiceBtn.style.visibility = `hidden`;
+        victory.pause();
+        victory.currentTime = 0;
+        victory.play();
     }
 }
 );
@@ -224,7 +235,8 @@ holdDiceBtn.addEventListener(`click`, ()=>{
     dices[2].style.display = `none`;
     dices[3].style.display = `none`;
     dices[4].style.display = `none`;
-    dices[5].style.display = `none`; 
+    dices[5].style.display = `none`;
+     
     // if player 1 turn and below 20 scores
     if(P1Turn == true && P2Turn == false && score1 + score < 20){
         score1 = score + score1
@@ -236,6 +248,9 @@ holdDiceBtn.addEventListener(`click`, ()=>{
         player1Title.style.webkitTextStroke = ``;
         score = 0
         scoreNum.textContent = `P1 Score: ${score}`;
+        victory.pause();
+        victory.currentTime = 0;
+        victory.play();
        }
     // if player 2 turn and below 20 scores
     else if(P2Turn == true && P1Turn == false && score2 + score < 20){
@@ -248,7 +263,9 @@ holdDiceBtn.addEventListener(`click`, ()=>{
         player2Title.style.webkitTextStroke = ``;
         score = 0
         scoreNum.textContent = `P2 Score: ${score}`;
-    
+        victory.pause();
+        victory.currentTime = 0;
+        victory.play();
     }
     // if player 1 turn and 20 or above scores
     else if(P1Turn == true && score + score1 >= 20){
@@ -257,7 +274,10 @@ holdDiceBtn.addEventListener(`click`, ()=>{
         scoreNum.textContent = `Player 1 wins with Score: ${score1}`;
         rollDiceBtn.style.visibility = `hidden`;
         startBtn.textContent = `New Game`;
-        holdDiceBtn.style.visibility = `hidden`; 
+        holdDiceBtn.style.visibility = `hidden`;
+        victory.pause();
+        victory.currentTime = 0;
+        victory.play(); 
     }
     // if player 2 turn and 20 or above scores
     else if(P2Turn == true && score + score2 >= 20){
@@ -267,6 +287,9 @@ holdDiceBtn.addEventListener(`click`, ()=>{
         rollDiceBtn.style.visibility = `hidden`;
         startBtn.textContent = `New Game`;
         holdDiceBtn.style.visibility = `hidden`;
+        victory.pause();
+        victory.currentTime = 0;
+        victory.play();
     }
 
 

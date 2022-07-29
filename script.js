@@ -6,7 +6,10 @@ const diceNum = document.getElementById(`diceNum`);
 let scoreNum = document.getElementById(`scoreNum`);
 const heading = document.getElementById(`heading`);
 const dices = document.getElementsByClassName(`dices`);
-let rollsound = new Audio("sound/roll2.wav"); 
+const rollSpin = document.getElementById(`rollSpin`);
+let rollsound = new Audio("sound/roll2.wav");
+let victory = new Audio("sound/Victory.mp3"); 
+let failed = new Audio("sound/fail.mp3"); 
 let score = 0;
 
 
@@ -37,9 +40,13 @@ rollDiceBtn.addEventListener(`click`, (event) =>{
     rollsound.currentTime = 0;
     rollsound.play();
 
-    event.target.classList.remove('done');
-    void event.target.offsetWidth;
-    event.target.classList.add("done");
+    rollDiceBtn.classList.remove('done');
+    void rollDiceBtn.offsetWidth;
+    rollDiceBtn.classList.add("done");
+
+    rollSpin.classList.remove(`spinner`);
+    void rollSpin.offsetWidth;
+    rollSpin.classList.add(`spinner`);
 
    
     let highRoll = function(){
@@ -66,7 +73,12 @@ rollDiceBtn.addEventListener(`click`, (event) =>{
             dices[2].style.display = `none`;
             dices[3].style.display = `none`;
             dices[4].style.display = `none`;
-            dices[5].style.display = `none`;                      
+            dices[5].style.display = `none`;
+            victory.pause();
+            victory.currentTime = 0;
+            failed.pause();
+            failed.currentTime = 0;
+            failed.play();                     
             break;
         case 2:
             dices[0].style.display = `none`;
@@ -120,6 +132,11 @@ rollDiceBtn.addEventListener(`click`, (event) =>{
         scoreNum.textContent = `You won with a score of ${score}`;
         rollDiceBtn.style.visibility = `hidden`;
         startBtn.textContent = `New Game`;
+        failed.pause();
+        failed.currentTime = 0;
+        victory.pause();
+        victory.currentTime = 0;
+        victory.play();
     }
 }
 );
