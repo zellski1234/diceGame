@@ -5,63 +5,119 @@ const startBtn = document.getElementById(`startBtn`);
 const diceNum = document.getElementById(`diceNum`);
 let scoreNum = document.getElementById(`scoreNum`);
 const heading = document.getElementById(`heading`);
-
+const dices = document.getElementsByClassName(`dices`);
+let rollsound = new Audio("sound/roll2.wav"); 
 let score = 0;
 
 
-let rollsound = new Audio("sound/roll2.wav"); 
-
-
+// ---------- starts and restarts game ----------
 startBtn.addEventListener(`click`, () =>{
         startBtn.textContent = `Restart`
-        rollDiceBtn.style.display = `block`
-        score = 0
-        scoreNum.textContent = `Score: ${score}`;
-        diceNum.textContent = `` 
-        heading.style.visibility = `hidden`
-        
+        diceNum.style.visibility = `hidden`;
+        rollDiceBtn.style.visibility = `visible`;
+        score = 0;
+        scoreNum.textContent = `Score: ${score}`; 
+        heading.style.visibility = `hidden`;
+        dices[0].style.display = `block`;
+        dices[0].style.visibility = `hidden`;         
+        dices[1].style.display = `none`;
+        dices[2].style.display = `none`;
+        dices[3].style.display = `none`;
+        dices[4].style.display = `none`;
+        dices[5].style.display = `none`;       
 });
 
 
-rollDiceBtn.addEventListener(`click`, () =>{
-
+// ---------- roll button ----------
+rollDiceBtn.addEventListener(`click`, (event) =>{
     let diceRoll = Math.ceil(Math.random() * 6);
-    rollsound.pause()
-    rollsound.currentTime = 0
+    diceNum.style.visibility = `visible`;
+    rollsound.pause();
+    rollsound.currentTime = 0;
     rollsound.play();
-   
 
-    if(diceRoll > 1 && score < 20){
+    event.target.classList.toggle('done');
+
+    document.getElementsByClassName(`done`);
+   
+    let highRoll = function(){
         diceNum.textContent = `You rolled a ${diceRoll}`
         score = score + diceRoll;
         console.log(score);
         console.log(`rolled a ${diceRoll}`);
-        scoreNum.textContent = `Score: ${score}`;
-        if (score >= 20){
-            scoreNum.textContent = `You won with a score of ${score}`;
-            rollDiceBtn.style.display = `none`
-            // remove the roll button
-        }
-    }
-    else if (diceRoll == 1) {
+        scoreNum.textContent = `Score: ${score}`;       
+    };
+    console.log(diceRoll);
+
+    switch (diceRoll) {
+        case 1:
+            score = 0;
+            scoreNum.textContent = `You lost Score: ${score}`;
+            diceNum.textContent = `You rolled a ${diceRoll}`;
+            console.log(`rolled a ${diceRoll}`);
+            console.log("lost");
+            rollDiceBtn.style.visibility = `hidden`;
+            heading.style.visibility = `visible`;
+            dices[0].style.display = `block`
+            dices[0].style.visibility = `visible`            
+            dices[1].style.display = `none`;
+            dices[2].style.display = `none`;
+            dices[3].style.display = `none`;
+            dices[4].style.display = `none`;
+            dices[5].style.display = `none`;                      
+            break;
+        case 2:
+            dices[0].style.display = `none`;
+            dices[1].style.display = `block`;
+            dices[2].style.display = `none`;
+            dices[3].style.display = `none`;
+            dices[4].style.display = `none`;
+            dices[5].style.display = `none`;
+            highRoll();
+            break;
+        case 3:
+            dices[0].style.display = `none`;
+            dices[1].style.display = `none`;
+            dices[2].style.display = `block`;
+            dices[3].style.display = `none`;
+            dices[4].style.display = `none`;
+            dices[5].style.display = `none`;
+            highRoll();                      
+            break;
+        case 4:
+            dices[0].style.display = `none`;
+            dices[1].style.display = `none`;
+            dices[2].style.display = `none`;
+            dices[3].style.display = `block`;
+            dices[4].style.display = `none`;
+            dices[5].style.display = `none`;
+            highRoll();
+            break;
+        case 5:
+            dices[0].style.display = `none`;
+            dices[1].style.display = `none`;
+            dices[2].style.display = `none`;
+            dices[3].style.display = `none`;
+            dices[4].style.display = `block`;
+            dices[5].style.display = `none`;
+            highRoll();     
+            break;
+        case 6:
+            dices[0].style.display = `none`;
+            dices[1].style.display = `none`;
+            dices[2].style.display = `none`;
+            dices[3].style.display = `none`;
+            dices[4].style.display = `none`;
+            dices[5].style.display = `block`;
+            highRoll();
+            break;
         
-        score = 0;
-        scoreNum.textContent = `You lost Score: ${score}`;
-        diceNum.textContent = `You rolled a ${diceRoll}`
-        console.log(`rolled a ${diceRoll}`);
-        console.log("lost");
-        rollDiceBtn.style.display = `none`
-        heading.style.visibility = ``        
-        // remove the roll button
     }
-    
+     // if dice score is 20 or more
+     if (score >= 20){
+        scoreNum.textContent = `You won with a score of ${score}`;
+        rollDiceBtn.style.visibility = `hidden`;
+        startBtn.textContent = `New Game`;
+    }
 }
 );
-
-
-
-
-
-
-
-

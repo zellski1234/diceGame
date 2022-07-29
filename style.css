@@ -1,4 +1,139 @@
 
-#rollDiceBtn{
-    display: none;
+/* *{
+    outline: 1px solid black;
+} */
+
+body{
+    margin: 0px;
+    background-color: #DB3A34;
+    color: #fdfdfd;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
 }
+    #contain{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #323031;
+        border-radius: 40px;
+        width: 700px;
+        margin: 100px 0px 0px 0px;
+    }
+        /* ----------- Top -----------  */
+        #top{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #323031;
+            width: 700px;
+            margin: 0px 50px 0px 50px;
+            border-radius: 40px;
+        }
+            #heading{
+                text-align: center;
+                font-size: 28px;
+                margin: 50px;
+            }
+            #startBtn{
+                padding: 10px 20px 10px 20px;
+                color: black;
+                text-align: center;
+                font-weight: 700;
+                border: none;
+                background-color: #FFC857;
+                border: 2px solid #FFC857;
+                border-radius: 40px;
+                font-size: 18px;
+                transition: transform 0.5s;
+                transition-timing-function: ease-out;
+            }
+            #startBtn:hover{
+                background-color: #FFD681;
+                border: 2px solid #FFD681;
+                cursor: pointer;
+                transform: translateY(-5px);
+            }
+        
+        /* ----------- Middle -----------  */
+        #middle{
+            width: 700px;
+            margin: 0px 50px 0px 50px;
+            background-color: #323031; 
+        }
+        #rollDiceBtn{
+                visibility: hidden;
+            }
+            /* ----------- Dice ----------- */
+            #imageDivs{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0;
+            }
+                .dices{
+                    width: 250px;
+                    margin: 0px;
+                }
+                    #diceImg1{display: block; visibility: hidden}
+                    #diceImg2{display: none;}
+                    #diceImg3{display: none;}
+                    #diceImg4{display: none;}
+                    #diceImg5{display: none;}
+                    #diceImg6{display: none;}
+
+        #bottom{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #323031;
+            width: 700px;
+            margin: 0px 50px 0px 50px;
+            border-radius: 40px;
+        }
+            #diceNum{
+                visibility: hidden;
+            }
+            #rollDiceBtn{
+                padding: 10px 20px 10px 20px;
+                color: black;
+                text-align: center;
+                font-weight: 700;
+                border: none;
+                background-color: #FFC857;
+                border: 2px solid #FFC857;
+                border-radius: 40px;
+                font-size: 18px;
+                transition: transform 0.5s;
+                transition-timing-function: ease-out;
+            }
+            #rollDiceBtn:hover{
+                background-color: #FFD681;
+                border: 2px solid #FFD681;
+                cursor: pointer;
+            }
+            
+
+            /* class for button press event */
+            .done{
+                animation: 0.8s shake forwards;
+            }
+
+            @keyframes shake{
+                0%{
+                  transform: translateX(0)
+                }
+                25%{
+                  transform: translateX(4px);
+                }
+                  
+                50%{
+                  transform: translateX(-4px);
+                }
+                100%{
+                  transform: translateX(0px);
+                }
+              }
+
+            
+

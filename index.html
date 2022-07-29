@@ -9,20 +9,34 @@
     <title>diceGame1player</title>
 </head>
 <body>
-    <div>
-        <center>
-            <h1 id="heading"> Hit a score of 20 to win! If you roll a 1 you lose</h1>
+    <div id="contain">
+
+        <!-- Top Row -->
+        <div id="top">
+            <h1 id="heading"> Hit a score of 20 to win! If you roll a 1 you lose!</h1>
             <button id="startBtn"> Start </button>
-        </center>
-        <div>
-            <center>
-            
+        </div>
+        
+        <!-- Middle Row -->
+        <div id="middle">   
+            <!-- ---------- Dice Images ---------- -->
+            <div id="imageDivs">
+                <img class="dices" id="diceImg1" src="images/dOne.png">
+                <img class="dices" id="diceImg2" src="images/dTwo.png">
+                <img class="dices" id="diceImg3" src="images/dThree.png">
+                <img class="dices" id="diceImg4" src="images/dFour.png">
+                <img class="dices" id="diceImg5" src="images/dFive.png">
+                <img class="dices" id="diceImg6" src="images/dSix.png">
+            </div>
+        </div>
+        <!-- Bottom Row -->
+        <div id="bottom">
+            <p id="diceNum">10</p>
             <button id="rollDiceBtn">Roll</button>
             <h1 id="scoreNum">Score:</h1>
-            <p id="diceNum"></p>
-            </center>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
