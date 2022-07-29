@@ -245,14 +245,14 @@ body{
                     background-color: #323031;
                 }
                 #contain{
-                    margin: 80px 0px 0px 0px;
+                    margin: 0px 0px 0px 0px;
                     width: auto;
                     padding: 0px;
                    
                 }
                 #bottom{
                     width: auto;
-                    margin: 100px 0px 200px 0px;
+                    margin: 40px 0px 220px 0px;
                     padding: 0px;
                 }
                     #scoreNum{
@@ -262,12 +262,12 @@ body{
                     }
                     #rollDiceBtn{
                         padding: 20px 48px 20px 36px;
-                        margin: 50px 80px 100px 80px;
+                        margin: 50px 80px 40px 80px;
                         font-size: 48px;
                     }
                     #holdDiceBtn{
                         padding: 20px 48px 20px 36px;
-                        margin: 0px 80px 80px 80px;
+                        margin: 0px 80px 60px 80px;
                         font-size: 48px;
                     }
                     .icons{
@@ -314,7 +314,7 @@ body{
                     
                 #top{
                     width: auto;
-                    margin: 100px 80px 0px 80px;
+                    margin: 30px 80px 0px 80px;
                     padding: 0px
                 }
                 #heading{
@@ -322,12 +322,12 @@ body{
                 }
                 #togglePlayers{
                     padding: 20px 36px 20px 36px;
-                    margin: 0px 80px 100px 80px;
+                    margin: 0px 80px 80px 80px;
                     font-size: 30px;
                 }
                 #startBtn{
                     padding: 20px 36px 20px 36px;
-                    margin: 50px 80px 100px 80px;
+                    margin: 50px 80px 10px 80px;
                     font-size: 48px;
                 }
                 
