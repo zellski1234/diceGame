@@ -75,24 +75,25 @@ rollDiceBtn.addEventListener(`click`, () =>{
     void rollSpin.offsetWidth;
     rollSpin.classList.add(`spinner`);
    
+    // if roll is hgiher than 1
     let highRoll = function(){
         if(P1Turn == true && P2Turn == false){
             diceNum.textContent = `You rolled a ${diceRoll}`
             score = score + diceRoll;
-            score1 = score1 + diceRoll;
+            // score1 = score1 + diceRoll;
             console.log(score);
             console.log(`rolled a ${diceRoll}`);
             scoreNum.textContent = `Score: ${score}`;
-            P1Score.textContent = `${score1}`;
+            // P1Score.textContent = `${score1}`;
         }
         else if (P2Turn == true && P1Turn == false){
             diceNum.textContent = `You rolled a ${diceRoll}`
             score = score + diceRoll;
-            score2 = score2 + diceRoll;
+            // score2 = score2 + diceRoll;
             console.log(score);
             console.log(`rolled a ${diceRoll}`);
             scoreNum.textContent = `Score: ${score}`;
-            P2Score.textContent = `${score2}`;   
+            // P2Score.textContent = `${score2}`;   
         }
              
     };
@@ -213,6 +214,7 @@ rollDiceBtn.addEventListener(`click`, () =>{
 
 holdDiceBtn.addEventListener(`click`, ()=>{
     if(P1Turn == true && P2Turn == false){
+        score1 = score + score1
         P1Score.textContent = `${score1}`
         P1Turn = false
         P2Turn = true
@@ -231,6 +233,7 @@ holdDiceBtn.addEventListener(`click`, ()=>{
         dices[5].style.display = `none`; 
        }
     else if(P2Turn == true && P1Turn == false){
+        score2 = score + score2
         P2Score.textContent = `${score2}`
         P1Turn = false
         P2Turn = true
